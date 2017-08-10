@@ -4,14 +4,68 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+var articleone ={
 
-app.get('/', function (req, res) {
+    title :'first guru',
+    date : '10 AUG 2017',
+    heading:'ARTICLE ONE',
+content :`
+<p>
+            This is the content of the article one you can see i t is very nice to do with i-mad app.
+                    </p>
+                    <p>
+                    This is the content of the article one you can see i t is very nice to do with i-mad app.
+                    </p>
+                    <p>
+                    This is the content of the article one you can see i t is very nice to do with i-mad app.
+                    </p>
+                    <p>
+                    This is the content of the article one you can see i t is very nice to do with i-mad app.
+                    </p>`
+
+};
+function createtemplate (data)
+{
+var title = data.title;
+var heading=data.heading;
+var date=data.date;
+var content =data.content;
+var htmltemplate= `
+<html>
+      <head>
+    <title>
+        ${title}
+    </title>
+    <link href ="/ui/style.css" rel="stylesheet" />
+    </head>
+      <body>
+      <div class="guru">
+        <div>
+          <o href='/'>Home</o>
+      </div>
+      <hr/>
+      <h3>
+         ${heading}
+      </h3>
+      <div>
+         ${date}
+          </div>
+          <div>
+         ${content}
+                </div>
+       </div>
+ </body>  
+ </html> 
+ `;
+ return htmltemplate;
+}
+app.get('/', function (req, res)  {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/articleone',function(req,res)
 {
-     res.sendFile(path.join(__dirname, 'ui','articleonee.html'));
+     res.send(createtemplate(articleone));
     
 });
 app.get('/articletwo',function(req,res)
