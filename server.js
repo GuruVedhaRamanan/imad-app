@@ -11,17 +11,17 @@ app.get('/', function (req, res) {
 
 app.get('/articleone',function(req,res)
 {
-    res.sentfile('Your request is being processed');
+    res.sent('Your request is being processed');
     
 });
 app.get('/articletwo',function(req,res)
 {
-    res.sentfile('Your request is being processed');
+    res.sent('Your request is being processed');
     
 });
 app.get('/articlethree',function(req,res)
 {
-    res.sentfile('Your request is being processed');
+    res.sent('Your request is being processed');
     
 });
 app.get('/ui/style.css', function (req, res) {
