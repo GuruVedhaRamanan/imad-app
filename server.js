@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
 
 app.get('/articleone',function(req,res)
 {
-    res.send('Your request1 is being processed');
+     res.sendFile(path.join(__dirname, 'ui', 'articleone.html'));
     
 });
 app.get('/articletwo',function(req,res)
