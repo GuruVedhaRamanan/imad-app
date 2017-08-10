@@ -4,9 +4,8 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-var articleone ={
-
-    title :'first guru',
+var articles ={
+articleone:{title :'ARTICLE REPONSE1',
     date : '10 AUG 2017',
     heading:'ARTICLE ONE',
 content :`
@@ -22,7 +21,28 @@ content :`
                     <p>
                     This is the content of the article one you can see i t is very nice to do with i-mad app.
                     </p>`
+},
+articletwo: {title :'ARTICLE REPONSE2',
+    date : '10 AUG 2017',
+    heading:'ARTICLE ONE',
+content :`
+           <p>
+            This is the content of the article one you can see i t is very nice to do with i-mad app.
+                    </p>
+                    <p>`
 
+},
+articlethree:{title :'ARTICLE REPONSE3',
+    date : '10 AUG 2017',
+    heading:'ARTICLE three',
+content :`
+<p>
+            This is the content of the article one you can see i t is very nice to do with i-mad app.
+                    </p>
+                    <p>
+                    This is the content of the article three you can see i t is very nice to do with i-mad app.
+                    </p>`
+}
 };
 function createtemplate (data)
 {
@@ -63,21 +83,12 @@ app.get('/', function (req, res)  {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/articleone',function(req,res)
+app.get('/:articleName',function(req,res)
 {
-     res.send(createtemplate(articleone));
-    
+     res.send(createtemplate(articles[articleName]));
+ var articleName =req.params.articleName;
 });
-app.get('/articletwo',function(req,res)
-{
-     res.sendFile(path.join(__dirname, 'ui','article2.html'));
-    
-});
-app.get('/articlethree',function(req,res)
-{
-    res.send('Your request3 is being processed');
-    
-});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
