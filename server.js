@@ -9,17 +9,17 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/Article 0ne',function(req,res)
+app.get('/Article-0ne',function(req,res)
 {
     res.sentfile('Your request is being processed');
     
 });
-app.get('/Article three',function(req,res)
+app.get('/Article-three',function(req,res)
 {
     res.sentfile('Your request is being processed');
     
 });
-app.get('/Article two',function(req,res)
+app.get('/Article-two',function(req,res)
 {
     res.sentfile('Your request is being processed');
     
