@@ -44,8 +44,7 @@ content :`
                     </p>`
 }
 };
-function createtemplate (data)
-{
+function createtemplate (data){
 var title = data.title;
 var heading=data.heading;
 var date=data.date;
@@ -85,8 +84,9 @@ app.get('/', function (req, res)  {
 
 app.get('/:articleName',function(req,res)
 {
+     var articleName =req.params.articleName;
      res.send(createtemplate(articles[articleName]));
- var articleName =req.params.articleName;
+
 });
 
 app.get('/ui/style.css', function (req, res) {
