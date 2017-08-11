@@ -5,7 +5,7 @@ element.innerHTML = "GURU'S PRACTICAL WORK";
 var img = document.getElementById("guru");
 var marginLeft= 0;
 function moveRight(){
-    marginLeft = marginLeft+1;
+    marginLeft = marginLeft+10;
     img.style.marginLeft = marginLeft+'px';
 }
 img.onclick = function()
