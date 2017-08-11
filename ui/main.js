@@ -1,6 +1,6 @@
 console.log('Loaded!');
 var element = document.getElementById("maintext");
-element.innerHTML = "GURU'S HTML APP";
+element.innerHTML = "GURU'S PRACTICAL WORK";
 //to move the image 
 var img = document.getElementById("guru");
 var marginLeft= 0;
