@@ -5,5 +5,5 @@ element.innerHTML = "Newvalue";
 var img = document.getElementById("guru");
 img.onclick =function()
 {
-    img.style.marginleft = '100px';
+    img.style.marginLeft = '100px';
 };
