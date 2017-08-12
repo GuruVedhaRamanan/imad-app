@@ -26,7 +26,7 @@ button.onclick=function()
              if(request.status ==200)
              {
                  var comments = request.responseText;
-                 comments=JSON.parse(comments);
+                 comments = JSON.parse(comments);
                 var ul = document.getElementById("commentslist");
              ul.innerHTML = comments;
              }
