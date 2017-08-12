@@ -39,7 +39,7 @@ button.onclick=function()
      request.open('GET','http://guruvedharamanan20cs.imad.hasura-app.io/submit-name/?name='+name,true);
      request.send(null);
    };
-         var commentbox = document.getElementById("comment_btn");
+         var = document.getElementById("comment_btn");
              commentbox.onclick = function(){
                  var request = new XMLHttpRequest();
                  request.onreadystatechange = function()
