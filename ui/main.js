@@ -55,7 +55,7 @@ button.onclick=function()
              }
          }
      };
-      var commentInput=document.getElementById("name");
+      var commentInput=document.getElementById("commentss");
       var comment= nameInput.value;
      request.open('GET','http://guruvedharamanan20cs.imad.hasura-app.io/comment/?comment='+comment,true);
      request.send(null);
