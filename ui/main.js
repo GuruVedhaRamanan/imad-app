@@ -29,9 +29,7 @@ button.onclick=function()
              {
                  var names = request.responseText;
                  names=JSON.parse(names);
-                 
-              
-             var ul = document.getElementById("namelist");
+                var ul = document.getElementById("namelist");
              ul.innerHTML = names;
              }
          }
@@ -41,9 +39,25 @@ button.onclick=function()
      request.open('GET','http://guruvedharamanan20cs.imad.hasura-app.io/submit-name/?name='+name,true);
      request.send(null);
    };
-            
-                              
-        
-  
+         var commentbox = document.getElementById("comment_btn");
+             commentbox.onclick = function(){
+                 var request = new XMLHttpRequest();
+                 request.onreadystatechange = function()
+                 {
+                     if(request.readyState === XMLHttpRequest.DONE)
+                     {
+                         if(request.status ==200)
+                         {
+                             var comments = request.responseTEXT;
+                             comments =JSON.parse(comments);
+                              var ul =document.getElementById("commentslist");
+                              ul.innerHTML = comments;
+                         }
+                     }
+                 };
+                 request.open('GET','http://guruvedharamanan20cs.imad.hasura-app.io/comment',true);
+                 request.send(null);
+             };
+
    
    
