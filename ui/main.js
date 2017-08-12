@@ -1,10 +1,10 @@
 var button=document.getElementById("counter");
 button.onclick=function()
 {  
-    var request = new XMLHTTPRequest();
+    var request = new XMLHttpRequest();
      request.onreadystatechange = function()
      {
-         if(request.readystate===XMLHTTPRequest.DONE)
+         if(request.readystate===XMLHttpRequest.DONE)
          {
              if(request.status==200)
              {
@@ -14,8 +14,8 @@ button.onclick=function()
              }
          }
      };
-     http.open("GET","http://guruvedharamanan20cs.imad.hasura-app.io/counter",true);
-     http.send(null);
+     request.open("GET","http://guruvedharamanan20cs.imad.hasura-app.io/counter",true);
+     request.send(null);
     };
       
                 
