@@ -98,8 +98,8 @@ app.get('/ui/madi.png', function (req, res) {
 });
 app.get('/comment',function(req,res){
    var comment =req.query.comment;
-   comments.push(comment);
-   res.send(JSON.stringify(comments));
+   comment.push(comment);
+   res.send(JSON.stringify(comment));
     
 });
 app.get('/:articleName',function(req,res)
