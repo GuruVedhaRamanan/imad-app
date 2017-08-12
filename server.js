@@ -96,17 +96,18 @@ app.get('/ui/madi.png', function (req, res) {
 // JSON -java script obi=ject notation
    res.send(JSON.stringify(names));
 });
-app.get('/comment',function(req,res){
-   var comment =req.query.comment;
-   comments.push(comment);
-   res.send(JSON.stringify(comments));
-    
-});
+
 app.get('/:articleName',function(req,res)
 {
      var articleName =req.params.articleName;
      res.send(createtemplate(articles[articleName]));
 
+});
+app.get('/comment',function(req,res){
+   var comment =req.query.comment;
+   comments.push(comment);
+   res.send(JSON.stringify(comments));
+    
 });
 
 app.get('/ui/style.css', function (req, res) {
