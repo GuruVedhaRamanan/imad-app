@@ -14,8 +14,8 @@ button.onclick=function()
              }
          }
      };
-     request.open("GET","http://guruvedharamanan20cs.imad.hasura-app.io/counter",true);
-     request.send(null);
+     http.open("GET","http://guruvedharamanan20cs.imad.hasura-app.io/counter",true);
+     http.send(null);
     };
       
                 
