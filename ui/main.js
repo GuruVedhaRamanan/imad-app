@@ -30,10 +30,7 @@ button.onclick=function()
                  var names = request.responseText;
                  names=JSON.parse(names);
                  var list =' '; 
-              for (var i=0;i<names.length;i++)
-              {
-                  list+= '<li>' + names[i] +'</li>';
-              }
+            
              var ul = document.getElementById("namelist");
              ul.innerHTML = list;
              }
@@ -44,7 +41,8 @@ button.onclick=function()
      request.open('GET','http://guruvedharamanan20cs.imad.hasura-app.io/submit-name/?name='+name,true);
      request.send(null);
    };
-             
+            
+                              
         
   
    
