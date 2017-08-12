@@ -30,9 +30,9 @@ button.onclick=function()
                  var names = request.responseText;
                  names=JSON.parse(names);
                  var list =' '; 
-            
+              
              var ul = document.getElementById("namelist");
-             ul.innerHTML = list;
+             ul.innerHTML = names;
              }
          }
      };
