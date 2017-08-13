@@ -18,12 +18,12 @@ button.onclick=function()
      request.send(null);
     }; var comment =document.getElementById("comment_btn");
    comment.onclick = function(){
-     var request = new XMLHttpRequest();
-     request.onreadystatechange = function()
+     var requests = new XMLHttpRequest();
+     requests.onreadystatechange = function()
      {
-         if(request.readyState == XMLHttpRequest.DONE)
+         if(requests.readyState == XMLHttpRequest.DONE)
          {
-             if(request.status ==200)
+             if(requests.status ==200)
              {
                  var comments = request.responseText;
                  comments = JSON.parse(comments);
