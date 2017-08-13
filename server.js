@@ -96,6 +96,7 @@ app.get('/ui/madi.png', function (req, res) {
 // JSON -java script obi=ject notation
    res.send(JSON.stringify(names));
 });
+var comments =" ";
 app.get('/commend',function(req,res){
    var comment =req.query.comment;
   comments.push(comment);
@@ -104,7 +105,7 @@ app.get('/commend',function(req,res){
 app.get('/:articleName',function(req,res)
 {
      var articleName =req.params.articleName;
-     res.send(createtemplate(articles[articleName]));
+   res.send(createtemplate(articles[articleName]));
 
 });
 
