@@ -35,7 +35,7 @@ button.onclick=function()
       var commentInput=document.getElementById("commentss");
       var comment= commentInput.value;
      request.open('GET','http://guruvedharamanan20cs.imad.hasura-app.io/commend/?comment='+comment,true);
-     request.send(guru);
+     request.send(comment);
    };
        var submit =document.getElementById("submit_btn");
    submit.onclick = function(){
