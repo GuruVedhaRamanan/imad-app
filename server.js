@@ -12,46 +12,6 @@ password:process.env.DB_PASSWORD,
 };
 var app = express();
 app.use(morgan('combined'));
-var articles ={
-'articleone':{title :'ARTICLE REPONSE1',
-    date : '10 AUG 2017',
-    heading:'ARTICLE ONE',
-content :`
-<p>
-            This is the content of the article one you can see i t is very nice to do with i-mad app.
-                    </p>
-                    <p>
-                    This is the content of the article one you can see i t is very nice to do with i-mad app.
-                    </p>
-                    <p>
-                    This is the content of the article one you can see i t is very nice to do with i-mad app.
-                    </p>
-                    <p>
-                    This is the content of the article one you can see i t is very nice to do with i-mad app.
-                    </p>`
-},
-articletwo: {title :'ARTICLE REPONSE2',
-    date : '10 AUG 2017',
-    heading:'ARTICLE ONE',
-content :`
-           <p>
-            This is the content of the article one you can see i t is very nice to do with i-mad app.
-                    </p>
-                    <p>`
-
-},
-articlethree:{title :'ARTICLE REPONSE3',
-    date : '10 AUG 2017',
-    heading:'ARTICLE three',
-content :`
-<p>
-            This is the content of the article one you can see i t is very nice to do with i-mad app.
-                    </p>
-                    <p>
-                    This is the content of the article three you can see i t is very nice to do with i-mad app.
-                    </p>`
-}
-};
 function createtemplate (data){
 var title = data.title;
 var heading=data.heading;
