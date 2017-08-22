@@ -13,7 +13,7 @@ password:process.env.DB_PASSWORD,
 var app = express();
 app.use(morgan('combined'));
 var articles ={
-articleone:{title :'ARTICLE REPONSE1',
+'articleone':{title :'ARTICLE REPONSE1',
     date : '10 AUG 2017',
     heading:'ARTICLE ONE',
 content :`
@@ -141,7 +141,7 @@ app.get('/article/:articleName',function(req,res){
             }
         else
         {
-            var articledata = result.row[0];
+            var articleData = result.row[0];
          res.send(createtemplate(articledata));
         }
         }
