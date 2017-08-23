@@ -16,7 +16,7 @@ function hash(input){
     return hashed.toString('hex');
 }
 app.get('/hash/:input',function(req,res){
-    var hashedString =hash(req.params.input,'this is a random value');
+    var hashedString =hash(req.params.input,'this-is-a-random-value');
     res.send(hashedString);
 });
 var app = express();
