@@ -10,7 +10,15 @@ host:'db.imad.hasura-app.io',
 port:'5432',
 password:process.env.DB_PASSWORD,
 };
-
+function hash(input){
+    //How to create hash?
+    var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sho512');
+    return hashed.toString('hex');
+}
+app.get('/hash/:input',function(req,res){
+    var hashedString =hash(req.params.input,'this is a random value');
+    res.send(hashedString);
+});
 var app = express();
 app.use(morgan('combined'));
 function createtemplate (data){
