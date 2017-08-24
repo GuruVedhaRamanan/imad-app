@@ -55,11 +55,11 @@ app.get('/ui/madi.png', function (req, res) {
  });
  function hash(input,salt){
     //How to create hash?
-    var hashed = crypto.pbkdf2Sync(input,'salt',10000,512,'sho512');
+    var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sho512');
     return hashed.toString('hex');
 }
 app.get('/hash/:input',function(req,res){
-    var hashedString =hash(req.params.input,'this-is-a-random-value');
+    var hashedString =hash(req.params.input,"this-is-a-random-value");
     res.send(hashedString);
 });
  var pool =new Pool(config);
