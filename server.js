@@ -58,7 +58,7 @@ app.get('/ui/madi.png', function (req, res) {
  function hash(input,salt){
     //How to create hash?
     var hashed = crypto.pbkdf2Sync(input,salt, 100000, 512, 'sha512');
-    return hashed.toString('hex');
+    return["pbkdf2","100000",salt,hashed.toString('hex')].join('$');
 }
 app.get('/hash/:input',function(req,res){
     var hashedString = hash(req.params.input,'this-is-a-random-value');
