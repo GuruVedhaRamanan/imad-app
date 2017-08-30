@@ -12,12 +12,15 @@
                  console.log("logged in succefully");
                  alert("you have loged into guru's app");
              }
-             else if(request.status ==403)
+             else if (request.status ==403)
              {
                  console.log("username and password is wrong");
                  alert("you have entered wrong password");
              }
-             
+             else if(request.status == 500)
+             {
+                 console.log("something went wrong");
+             }
          }
      };
       var username=document.getElementById("username").value;
