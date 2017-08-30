@@ -1,43 +1,6 @@
-var button=document.getElementById("counter");
-button.onclick=function()
-{  
-    var request = new XMLHttpRequest();
-     request.onreadystatechange = function()
-     {
-         if(request.readyState===XMLHttpRequest.DONE)
-         {
-             if(request.status=== 200)
-             {
-                 var counter=request.responseText;
-                var span=document.getElementById("count");
-                span.innerHTML = counter.toString();
-             }
-         }
-     };
-     request.open('GET','http://guruvedharamanan20cs.imad.hasura-app.io/counter',true);
-     request.send(null);
-    }; var comment =document.getElementById("comment_btn");
-   comment.onclick = function(){
-     var requests = new XMLHttpRequest();
-     requests.onreadystatechange = function()
-     {
-         if(requests.readyState == XMLHttpRequest.DONE)
-         {
-             if(requests.status ==200)
-             {
-                 var comments = request.responseText;
-                 comments = JSON.parse(comments);
-                var ul = document.getElementById("commentslist");
-             ul.innerHTML = comments;
-             }
-         }
-     };
-      var commentInput=document.getElementById("commentss");
-      var comment= commentInput.value;
-     request.open('GET','http://guruvedharamanan20cs.imad.hasura-app.io/commend/?comment='+comment,true);
-     request.send(comment);
-   };
-       var submit =document.getElementById("submit_btn");
+
+    //submit username
+    var submit =document.getElementById("submit_btn");
    submit.onclick = function(){
      var request = new XMLHttpRequest();
      request.onreadystatechange = function()
@@ -46,16 +9,22 @@ button.onclick=function()
          {
              if(request.status ==200)
              {
-                 var names = request.responseText;
-                 names=JSON.parse(names);
-                var ul = document.getElementById("namelist");
-             ul.innerHTML = names;
+                 console.log("logged in succefully");
+                 alert("you have loged into guru's app");
              }
+             else if(request.status ==403)
+             {
+                 console.log("username and password is wrong");
+                 alert("you have entered wrong password");
+             }
+             
          }
      };
-      var nameInput=document.getElementById("name");
-      var name = nameInput.value;
-     request.open('GET','http://guruvedharamanan20cs.imad.hasura-app.io/submit-name/?name='+name,true);
-     request.send(null);
+      var username=document.getElementById("username").value;
+      var password=document.getElementById("password").value;
+    console.log(username);
+    console.log(password);
+     request.open('POST','http://guruvedharamanan20cs.imad.hasura-app.io/login',true);
+     request.send(JSON.stringify({ username: username,password: password}));
    }; 
   
