@@ -72,7 +72,7 @@ app.get('/hash/:input',function(req,res){
     var hashedString = hash(req.params.input,'this-is-a-random-value');
     res.send(hashedString);
 });
-app.get('/create-user',function(req,res){
+app.post('/create-user',function(req,res){
    //user name and password
    var username=req.body.username;
    var password=req.body.password;
