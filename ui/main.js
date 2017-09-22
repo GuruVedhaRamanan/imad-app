@@ -25,7 +25,7 @@
      };
       var username=document.getElementById("username").value;
       var password=document.getElementById("password").value;
-     request.open('GET','http://guruvedharamanan20cs.imad.hasura-app.io/login',true);
+     request.open('POST','http://guruvedharamanan20cs.imad.hasura-app.io/login',true);
      request.setRequestHeader('Content-Type','application/json');
      request.send(JSON.stringify({ username: username,password: password}));
    }; 
@@ -46,7 +46,7 @@ register.onclick = function(){
      };
       var username=document.getElementById("username").value;
       var password=document.getElementById("password").value;
-     request.open('GET','http://guruvedharamanan20cs.imad.hasura-app.io/create-user',true);
+     request.open('POST','http://guruvedharamanan20cs.imad.hasura-app.io/create-user',true);
      request.setRequestHeader('Content-Type','application/json');
      request.send(JSON.stringify({ username: username,password: password}));
    }; 
